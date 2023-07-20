@@ -8,10 +8,14 @@
         public string EndDate { get; set; }
         public string Budget { get; set; } 
         public string ProjectAddress { get; set; }
-        public int EmployeeId { get; set; }
-        public int ClientId { get; set; }
+        public int EmployeeID { get; set; }
+        public int ClientID { get; set; }
+        public int SubcontractorID { get; set; }
+
+
         public Employee Employee { get; set; }
         public Client Client { get; set; }
+        public Subcontractor Subcontrctor { get; set; }
 
     }
 }
