@@ -58,7 +58,7 @@ namespace ConstructionCompanyDB.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("EquipmentID,EquipmentName,Manufacturer,OwnOrRent,EmployeeID")] Equipment equipment)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(equipment);
                 await _context.SaveChangesAsync();
@@ -95,7 +95,7 @@ namespace ConstructionCompanyDB.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {

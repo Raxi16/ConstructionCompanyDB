@@ -58,7 +58,7 @@ namespace ConstructionCompanyDB.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("EmployeeID,Name,Title,DOB,Number,Email,WorkDays,StartTime,BreakTime,FinishTime")] Employee employee)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(employee);
                 await _context.SaveChangesAsync();
@@ -95,7 +95,7 @@ namespace ConstructionCompanyDB.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {

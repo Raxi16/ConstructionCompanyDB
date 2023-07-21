@@ -58,7 +58,7 @@ namespace ConstructionCompanyDB.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ClientID,Name,Number,Email")] Client client)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(client);
                 await _context.SaveChangesAsync();
@@ -95,7 +95,7 @@ namespace ConstructionCompanyDB.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {
