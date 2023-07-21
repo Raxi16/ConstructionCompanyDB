@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ConstructionCompanyDB.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ConstructionCompanyDB.Areas.Identity.Data;
 
@@ -21,7 +22,8 @@ public class ConstructionCompanyDBContext : IdentityDbContext<ConstructionCompan
         // Add your customizations after calling base.OnModelCreating(builder);
     }
 
-    public DbSet<ConstructionCompanyDB.Models.Client> Client { get; set; } = default!;
+
+        public DbSet<ConstructionCompanyDB.Models.Client> Client { get; set; } = default!;
 
     public DbSet<ConstructionCompanyDB.Models.Employee> Employee { get; set; } = default!;
 
