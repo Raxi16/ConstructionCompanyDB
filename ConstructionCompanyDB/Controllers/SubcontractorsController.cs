@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ConstructionCompanyDB.Areas.Identity.Data;
 using ConstructionCompanyDB.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ConstructionCompanyDB.Controllers
 {
@@ -20,6 +21,7 @@ namespace ConstructionCompanyDB.Controllers
         }
 
         // GET: Subcontractors
+        [Authorize]
         public async Task<IActionResult> Index()
         {
               return _context.Subcontractor != null ? 
